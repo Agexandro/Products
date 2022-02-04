@@ -1,0 +1,10 @@
+<div class="details" *ngIf="product">
+  <h2>{{product.name}}</h2>
+  <p>Cost: {{product.price | currency}}</p>
+  <div *ngIf="product.existence > 0; else noExistence">
+    <span class="ok-alert">{{product.existence}} products Left</span>
+  </div>
+  <ng-template #noExistence>
+    <span class="danger-alert">This product is out of existence</span>
+  </ng-template>
+</div>
